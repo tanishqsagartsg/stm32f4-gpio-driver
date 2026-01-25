@@ -91,6 +91,10 @@ void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 {
 
 	uint32_t temp = 0;
+
+	//ENABLE THE PHERIPHERAL CLOCK
+	GPIO_PeriClockControl(pGPIOHandle->pGPIOx, EN);
+
 	//CONFIGURE THE MODE OF THE GPIO PIN==============================
 	//for non interrupt functionalities
 	if(pGPIOHandle-> GPIO_PinConfig.GPIO_PinMode <= GPIO_MODE_ANALOG){
